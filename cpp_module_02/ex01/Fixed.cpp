@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 19:50:29 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/07/27 09:20:58 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/07/27 11:34:19 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,25 @@ Fixed::Fixed() : fpnValue(0)
     std::cout << "Default constructor called" << std::endl;
 }
 
+Fixed::Fixed(const int value)
+{
+    std::cout << "Int constructor called" << std::endl;
+    fpnValue = value << nbFractionalBits;
+}
+
+Fixed::Fixed(const float value)
+{
+    std::cout << "Float constructor called" <<std::endl;
+    fpnValue = (int)round((value * (1 << nbFractionalBits)));
+}
+
 Fixed::Fixed(const Fixed &fixed)
 {    
     std::cout << "Copy constructor called" << std::endl;
     *this = fixed;
 }
 
-Fixed& Fixed::operator = (const Fixed& fixed)
+Fixed &Fixed::operator = (const Fixed &fixed)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     fpnValue = fixed.getRawBits();
@@ -41,6 +53,22 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
     fpnValue = raw;
+}
+
+float Fixed::toFloat( void ) const
+{
+    return ((float)fpnValue / (1 << nbFractionalBits));
+}
+
+int Fixed::toInt( void ) const
+{
+    return ((int)fpnValue >> nbFractionalBits);
+}
+
+std::ostream &operator << (std::ostream &output, const Fixed &fixed)
+{
+    output << fixed.toFloat();
+    return (output);
 }
 
 Fixed::~Fixed()

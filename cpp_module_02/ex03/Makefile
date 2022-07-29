@@ -6,7 +6,7 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/07/26 20:21:06 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/07/28 13:09:05 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,13 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = fixed
 
-INCLUDE =	Fixed.h
+INCLUDES =	Fixed.h	\
+			Point.h
 
 SRC	=	main.cpp		\
 		Fixed.cpp		\
+		Point.cpp		\
+		bsp.cpp			
 
 OBJECTS = $(SRC:.cpp=.o)
 
@@ -30,8 +33,8 @@ all: $(NAME)
 $(NAME): $(OBJECTS) 
 	@$(CC) $(STDCPP) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
-%.o: %.cpp $(INCLUDE)
-	$(CC) $(CFLAGS) -o $@ -c $<
+%.o: %.cpp $(INCLUDES)
+	$(CC) $(STDCPP) $(CFLAGS) -o $@ -c $<
 	
 clean:
 	@rm -f $(OBJECTS)

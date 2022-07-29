@@ -6,7 +6,7 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/07/26 20:21:06 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/07/27 21:12:15 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(NAME): $(OBJECTS)
 	@$(CC) $(STDCPP) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.o: %.cpp $(INCLUDE)
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(STDCPP) $(CFLAGS) -o $@ -c $<
 	
 clean:
 	@rm -f $(OBJECTS)

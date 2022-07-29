@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:39:20 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/07/25 13:42:03 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/07/26 19:48:41 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void Replace::replace()
                 index = line.find(s1);
                 while (index != std::string::npos)
                 {
-                    line.replace(index, s1.length(), s2);
+                    line = line.substr(0, index) + s2 + line.substr(index + s1.length(), line.length());
                     index = line.find(s1, index + 1);
                 }
                 outfile << line << std::endl;
