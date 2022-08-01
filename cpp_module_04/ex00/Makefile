@@ -6,7 +6,7 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/08/01 18:49:59 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/07/30 18:08:31 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,20 +14,14 @@
 
 CC = c++
 STDCPP = -std=c++98
-CFLAGS = -Wall -Wextra -Werror -Wshadow
+CFLAGS = -Wall -Wextra -Werror
 
-NAME = diamondtrap
+NAME = claptrap
 
-INCLUDE =	ClapTrap.h	\
-			ScavTrap.h	\
-			FragTrap.h	\
-			DiamondTrap.h
+INCLUDE =	ClapTrap.h
 
 SRC	=	main.cpp		\
-		ClapTrap.cpp	\
-		ScavTrap.cpp	\
-		FragTrap.cpp	\
-		DiamondTrap.cpp
+		ClapTrap.cpp
 
 		
 OBJECTS = $(SRC:.cpp=.o)

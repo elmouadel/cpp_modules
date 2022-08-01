@@ -6,12 +6,12 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:30:54 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/07/30 21:42:00 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:16:10 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DiamondTrap
-# define DiamondTrap
+#ifndef DIAMONDTRAP
+# define DIAMONDTRAP
 
 # include "ScavTrap.h"
 # include "FragTrap.h"
@@ -21,14 +21,19 @@
 
 class DiamondTrap : public ScavTrap , public FragTrap
 {
+    std::string name;
+    using FragTrap::hitPoint;
+    using ScavTrap::energy;
+    using FragTrap::attDamage;
+    
     public:
-        DiamondTrap();
+        using ScavTrap::attack;
+        DiamondTrap(void);
         DiamondTrap(std::string name);
-        ~DiamondTrap();
         DiamondTrap(const DiamondTrap &diamondtrap);
         DiamondTrap &operator = (const DiamondTrap &diamondtrap);
-        void attack(const std::string &target);
-        void highFivesGuys(void);
+        void whoAmI(void);
+        ~DiamondTrap();
 };
 
 #endif
