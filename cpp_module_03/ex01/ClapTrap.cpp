@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:43:40 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/07/30 19:59:33 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:14:32 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     else
     {
 	    std::cout << "ClapTrap " << name << " repaired by " << amount << " points of damage!" << std::endl;
+        hitPoint += amount;
         energy--;
     }
 }

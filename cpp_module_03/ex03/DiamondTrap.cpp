@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 18:37:31 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/01 17:48:57 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:56:06 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ void DiamondTrap::whoAmI(void)
 
 DiamondTrap::~DiamondTrap()
 {
-    std::cout << "DiammoundTrap default constructor called." << std::endl;    
+    std::cout << "DiammoundTrap default deconstructor called." << std::endl;    
 }
