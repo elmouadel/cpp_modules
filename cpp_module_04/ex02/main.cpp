@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 19:02:35 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/06 07:20:54 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/06 07:21:06 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ int main()
 	std::cout << "ptr->makeSound to &Dog: ";
 	ptr->makeSound();
 	std::cout << std::endl;
-	
+
 	std::cout << "use a reference type Animal type Cat: " << std::endl;
 	Animal &ref = lucy;
 	ref.makeSound();
-	
+
 	// system("leaks brain");
 	return(0);
 }

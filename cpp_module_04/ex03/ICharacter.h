@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Barain.h                                            :+:      :+:    :+:   */
+/*   ICharacter.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 20:02:15 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/02 20:18:31 by eabdelha         ###   ########.fr       */
+/*   Created: 2022/08/05 09:54:30 by eabdelha          #+#    #+#             */
+/*   Updated: 2022/08/06 09:35:38 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BARIN_H
-#define BARIN_H
+#ifndef ICHARACTER_H
+#define ICHARACTER_H
 
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include "AMateria.h"
 
-class Brain
-{
-    std::string *ideas;
-    
+class AMateria;
+
+class ICharacter
+{   
     public:
-        Brain();
-        Brain(const Brain &brain);
-        Brain &operator = (const Brain &brain);
-        std::string *getIdeas(void);
-        ~Brain();
+    virtual ~ICharacter() {}
+    virtual std::string const & getName() const = 0;
+    virtual void equip(AMateria *m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

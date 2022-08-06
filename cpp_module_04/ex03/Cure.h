@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Barain.h                                            :+:      :+:    :+:   */
+/*   Cure.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 20:02:15 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/02 20:18:31 by eabdelha         ###   ########.fr       */
+/*   Created: 2022/08/06 07:08:41 by eabdelha          #+#    #+#             */
+/*   Updated: 2022/08/06 07:08:42 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BARIN_H
-#define BARIN_H
+#ifndef CURE_H
+#define CURE_H
 
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include "AMateria.h"
 
-class Brain
+class Cure : public AMateria
 {
-    std::string *ideas;
-    
     public:
-        Brain();
-        Brain(const Brain &brain);
-        Brain &operator = (const Brain &brain);
-        std::string *getIdeas(void);
-        ~Brain();
+        Cure();
+        Cure(const Cure &cure);
+        Cure &operator = (const Cure &cure);
+        virtual AMateria* clone() const;
+        virtual void use(ICharacter& target);
+        ~Cure();
 };
 
 #endif

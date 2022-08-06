@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Barain.h                                            :+:      :+:    :+:   */
+/*   IMateriaSource.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 20:02:15 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/02 20:18:31 by eabdelha         ###   ########.fr       */
+/*   Created: 2022/08/06 09:01:33 by eabdelha          #+#    #+#             */
+/*   Updated: 2022/08/06 09:02:44 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BARIN_H
-#define BARIN_H
+#ifndef IMARERIASOURCE_H
+#define IMARERIASOURCE_H
 
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include "AMateria.h"
 
-class Brain
+class IMateriaSource
 {
-    std::string *ideas;
-    
     public:
-        Brain();
-        Brain(const Brain &brain);
-        Brain &operator = (const Brain &brain);
-        std::string *getIdeas(void);
-        ~Brain();
+    virtual ~IMateriaSource() {}
+    virtual void learnMateria(AMateria*) = 0;
+    virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

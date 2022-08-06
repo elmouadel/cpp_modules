@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Barain.h                                            :+:      :+:    :+:   */
+/*   AMateria.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 20:02:15 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/02 20:18:31 by eabdelha         ###   ########.fr       */
+/*   Created: 2022/08/05 08:41:58 by eabdelha          #+#    #+#             */
+/*   Updated: 2022/08/06 11:44:02 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BARIN_H
-#define BARIN_H
+#ifndef AMATERIA_H
+#define AMATERIA_H
 
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include "ICharacter.h"
 
-class Brain
+class ICharacter;
+
+class AMateria
 {
-    std::string *ideas;
-    
+    protected:
+        std::string type;
+
     public:
-        Brain();
-        Brain(const Brain &brain);
-        Brain &operator = (const Brain &brain);
-        std::string *getIdeas(void);
-        ~Brain();
+        AMateria(std::string const & type);
+        AMateria(const AMateria &amateria);
+        AMateria &operator = (const AMateria &amateria);
+        std::string const & getType() const;
+        virtual AMateria* clone() const = 0;
+        virtual void use(ICharacter& target);
+        virtual ~AMateria();
 };
 
 #endif

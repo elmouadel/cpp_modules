@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Barain.h                                            :+:      :+:    :+:   */
+/*   Ice.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/02 20:02:15 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/02 20:18:31 by eabdelha         ###   ########.fr       */
+/*   Created: 2022/08/05 10:35:56 by eabdelha          #+#    #+#             */
+/*   Updated: 2022/08/05 10:53:06 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BARIN_H
-#define BARIN_H
+#ifndef ICE_H
+#define ICE_H
 
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include "AMateria.h"
 
-class Brain
+class Ice : public AMateria
 {
-    std::string *ideas;
-    
     public:
-        Brain();
-        Brain(const Brain &brain);
-        Brain &operator = (const Brain &brain);
-        std::string *getIdeas(void);
-        ~Brain();
+        Ice();
+        Ice(const Ice &ice);
+        Ice &operator = (const Ice &ice);
+        virtual AMateria* clone() const;
+        virtual void use(ICharacter& target);
+        ~Ice();
 };
 
 #endif
