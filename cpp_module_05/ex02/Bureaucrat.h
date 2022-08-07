@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 19:56:12 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 09:02:26 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/07 15:23:54 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 # include <iomanip>
 # include <string>
 # include <exception>
+# include "Form.h"
 
+class Form;
 
- //system(pause>nul);
 class Bureaucrat
 {
     const std::string   name;
@@ -36,12 +37,16 @@ class Bureaucrat
         void decrementGrade(void);
         class GradeTooHighException : public std::exception
         {
-            const char *what() const throw();  
+            public:
+                const char *what() const throw();  
         };
         class GradeTooLowException : public std::exception
         {
-            const char *what() const throw();  
+            public:
+                const char *what() const throw();  
         };
+        void signForm(Form &form);
+        void executeForm(Form const & form);
         ~Bureaucrat();
 };
 

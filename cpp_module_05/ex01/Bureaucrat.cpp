@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 19:56:09 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 09:03:04 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/07 11:40:30 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,19 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat" << " default destructor called." << std::endl;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << name << " signed " << form.getName() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << name << " couldn't sign " << form.getName() << " because he has a " << e.what() << std::endl;
+    }
 }
 
 std::ostream &operator << (std::ostream &out, const Bureaucrat &bureaucrat)

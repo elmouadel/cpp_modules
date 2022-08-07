@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 17:13:17 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/01 18:19:36 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/07 21:07:09 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(void) {
 
 	DiamondTrap thor("thor");
 	DiamondTrap odin("odin");
+	std::cout << odin.getEnergy() <<"\n";
 
 	odin.attack("thor");
 	odin.beRepaired(2);

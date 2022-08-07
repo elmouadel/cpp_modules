@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 18:37:31 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/02 16:56:06 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/07 21:09:33 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ DiamondTrap::DiamondTrap()
     std::cout << "DiammoundTrap default constructor called." << std::endl;    
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(std::string name)
 
 {
     std::cout << "DiammoundTrap constructor called." << std::endl;
     this->name = name;
+    energy = 50;
     ClapTrap::name = name + "_clap_name";
 }
 

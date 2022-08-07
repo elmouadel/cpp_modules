@@ -6,7 +6,7 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/08/07 08:28:12 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/07 11:03:18 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = clang++
 STDCPP = -std=c++98 
 CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-NAME = bureaucrat
+NAME = form
 
 INCLUDES =	AMateria.h		\
 			Ice.h			\
@@ -30,6 +30,7 @@ INCLUDES =	AMateria.h		\
 
 SRC	=	main.cpp			\
 		Bureaucrat.cpp		\
+		Form.cpp			\
 
 		
 OBJECTS = $(SRC:.cpp=.o)
