@@ -6,7 +6,7 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/08/11 09:37:30 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/11 14:52:07 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,13 @@ CC = clang++
 STDCPP = -std=c++98 
 CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-NAME = span
+NAME = mutantstack
 
-INCLUDES =	Span.h		\
+INCLUDES =	MutantStack.h		\
 			
 
 
 SRC	=	main.cpp					\
-		Span.cpp
 		
 OBJECTS = $(SRC:.cpp=.o)
 
