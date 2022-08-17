@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:39:20 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/10 14:41:56 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/16 18:40:35 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,22 @@ void Replace::replace()
 
     if (infile.is_open())
     {
-        std::ofstream   outfile (fileName.append(".replace"));
+        std::ofstream   outfile (fileName + ".replace");
         if (outfile.is_open())
         {
-            while (infile.good() && outfile.good()) 
+            line.assign((std::istreambuf_iterator<char>(infile)), (std::istreambuf_iterator<char>()));
+            index = line.find(s1);
+            while (index != std::string::npos && s1[0])
             {
-                getline(infile, line);
-                index = line.find(s1);
-                while (index != std::string::npos && s1[0])
-                {
-                    // line = line.substr(0, index) + s2 + line.substr(index + s1.length(), line.length());
-                    line.erase(index, s1.length());
-                    line.insert(index, s2);
-                    index = line.find(s1, index + 1);
-                    std::cout << index << "\n";
-                }
-                outfile << line << std::endl;
+                line.erase(index, s1.length());
+                line.insert(index, s2);
+                index = line.find(s1, index + 1);
             }
+            outfile << line << std::flush;
             outfile.close();
         }
         else
-            std::cerr << fileName.append(".replace") << ": " << strerror(errno) << std::endl;
+            std::cerr << fileName + ".replace: " << strerror(errno) << std::endl;
         infile.close();
     }
     else

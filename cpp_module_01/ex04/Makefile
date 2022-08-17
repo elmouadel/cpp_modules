@@ -6,15 +6,14 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/07/25 12:08:07 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/16 18:41:10 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all bonus clean fclean re 
 
 CC = c++
-STDCPP = -std=c++98
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = replace
 
@@ -28,7 +27,7 @@ OBJECTS = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS) 
-	@$(CC) $(STDCPP) $(CFLAGS) $(OBJECTS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.o: %.cpp $(INCLUDE)
 	$(CC) $(CFLAGS) -o $@ -c $<

@@ -6,14 +6,14 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/07/24 11:14:08 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/16 18:07:08 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all bonus clean fclean re 
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = zhorde
 

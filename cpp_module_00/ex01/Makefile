@@ -6,20 +6,21 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/07/21 10:40:00 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/17 16:09:50 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all bonus clean fclean re 
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 NAME = phonebook
 
-INCLUDES =	PhoneBook.hpp \
-			Contact.hpp
-
+INCLUDES =	PhoneBook.h \
+			Contact.h	
+			
+			
 SRC	=	main.cpp	\
 		PhoneBook.cpp	\
 		Contact.cpp		\

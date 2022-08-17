@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:21:19 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/07/25 13:07:41 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/16 18:34:47 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <iomanip>
 # include <string>
 # include <fstream>
-# include <stdio.h>
 
 class Replace
 {

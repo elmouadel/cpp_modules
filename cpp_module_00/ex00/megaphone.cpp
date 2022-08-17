@@ -6,13 +6,13 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 10:22:00 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/06/23 16:40:17 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/17 15:28:35 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 #include <string>
-#include <locale>
 
 int main(int ac, char **av)
 {
@@ -20,10 +20,10 @@ int main(int ac, char **av)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     else
     {
-        for(int i = 1; i < ac; i++)
+        for(size_t i = 1; i < (size_t)ac; i++)
         {
             std::string str(av[i]);
-            for(int j = 0; j < str.length(); j++)
+            for(size_t j = 0; j < (size_t)str.length(); j++)
                 std::cout << (char)std::toupper(str[j]);
         }
     }

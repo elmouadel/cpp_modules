@@ -6,18 +6,18 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/07/21 10:40:47 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/17 15:51:08 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY : all bonus clean fclean re 
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 NAME = megaphone
 
-SRC	=	megaphone.cpp	\
+SRC	=	megaphone.cpp	
 
 OBJECTS = $(SRC:.cpp=.o)
 

@@ -6,11 +6,11 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 19:56:23 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/07/21 19:13:11 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:18:43 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "PhoneBook.h"
 
 Contact::Contact(){}
 
@@ -20,19 +20,19 @@ void    Contact::FillInformations()
 {
     std::cout << "$FirstName: ";
     if(!std::getline(std::cin, FirstName))
-        exit(1);
+        std::exit(1);
     std::cout << "$LastName: ";
     if(!std::getline(std::cin, LastName))
-        exit(1);
+        std::exit(1);
     std::cout << "$NickName: ";
     if(!std::getline(std::cin, NickName))
-        exit(1);
+        std::exit(1);
     std::cout << "$PhoneNumber: ";
     if(!std::getline(std::cin, PhoneNumber))
-        exit(1);
+        std::exit(1);
     std::cout << "$DarkestSecret: ";
     if(!std::getline(std::cin, DarkestSecret))
-        exit(1);
+        std::exit(1);
 }
 void PrintString(std::string str)
 {
@@ -67,3 +67,4 @@ void Contact::DisplayInformations()
         return (0);
     return (1);
  }
+ 
