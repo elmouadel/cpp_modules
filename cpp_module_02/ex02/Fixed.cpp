@@ -22,7 +22,7 @@ Fixed::Fixed() : fpnValue(0)
 Fixed::Fixed(const int value)
 {
     // std::cout << "Int constructor called" << std::endl;
-    fpnValue = value << nbFractionalBits;
+    fpnValue = value * (1 << nbFractionalBits);
 }
 
 Fixed::Fixed(const float value)
@@ -134,6 +134,27 @@ Fixed Fixed::operator -- (int)
     return (hol);
 }
 
+int Fixed::getRawBits(void) const
+{
+    // std::cout << "getRawBits member function called" << std::endl;
+    return (fpnValue);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+    fpnValue = raw;
+}
+
+float Fixed::toFloat( void ) const
+{
+    return ((float)fpnValue / (1 << nbFractionalBits));
+}
+
+int Fixed::toInt( void ) const
+{
+    return ((int)fpnValue / (1 << nbFractionalBits));
+}
+
 Fixed &Fixed::min(Fixed &f1, Fixed &f2)
 {
     if (f1 < f2)
@@ -160,27 +181,6 @@ Fixed &Fixed::max(Fixed const &f1, Fixed const &f2)
     if ((Fixed)f1 > (Fixed)f2)
         return ((Fixed&)f1);
     return ((Fixed&)f2);
-}
-
-int Fixed::getRawBits(void) const
-{
-    // std::cout << "getRawBits member function called" << std::endl;
-    return (fpnValue);
-}
-
-void Fixed::setRawBits(int const raw)
-{
-    fpnValue = raw;
-}
-
-float Fixed::toFloat( void ) const
-{
-    return ((float)fpnValue / (1 << nbFractionalBits));
-}
-
-int Fixed::toInt( void ) const
-{
-    return ((int)fpnValue >> nbFractionalBits);
 }
 
 std::ostream &operator << (std::ostream &output, const Fixed &fixed)

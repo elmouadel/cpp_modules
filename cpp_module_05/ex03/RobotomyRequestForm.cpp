@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 14:38:35 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 17:00:29 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/23 17:00:58 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyFor
     
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &robotomyrequestform) :
-    Form("RobotomyForm", 72, 45) , target(robotomyrequestform.target)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &form) :
+    Form("RobotomyForm", 72, 45) , target(form.target)
 {
     std::cout << "RobotomyRequestForm" << " default constructor called." << std::endl;
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm &robotomyrequestform)
+RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm &form)
 {
-    if (this == &robotomyrequestform)
+    if (this == &form)
         return (*this);
-    target = robotomyrequestform.target;
+    target = form.target;
     return (*this);
 }
 

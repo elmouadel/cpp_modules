@@ -12,18 +12,11 @@
 
 #include "Point.h"
 
-Fixed  Point::crossPro(Point const u, Point const v)
-{
-    return (((Fixed)u.x * (Fixed)v.y) - ((Fixed)u.y * (Fixed)v.x));
-}
-
 Point::Point() : x(0), y(0){}
-
 
 Point::Point(Fixed x, Fixed y): x(x), y(y){}
 
-Point::Point(Fixed &x, Fixed &y): x(x), y(y){}
-
+Point::Point(const float x, const float y): x(x), y(y){}
 
 Point::Point(const Point &point): x(point.x), y(point.y){}
 
@@ -39,6 +32,11 @@ Point &Point::operator = (const Point &point)
 Point const Point::operator - (Point const &point) const
 {
     return (Point((x - point.x), (y - point.y)));
+}
+
+Fixed  Point::crossPro(Point const u, Point const v)
+{
+    return (((Fixed)u.x * (Fixed)v.y) - ((Fixed)u.y * (Fixed)v.x));
 }
 
 Point::~Point(){}

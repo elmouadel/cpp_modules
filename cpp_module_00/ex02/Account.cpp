@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:02:36 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/17 16:38:37 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/17 16:58:00 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	Account::_displayTimestamp(void)
     time_t now = time(0);
     tm *_tm = localtime(&now);
     std::cout << std::setfill('0') << "[" << (_tm->tm_year + 1900)
-       << std::setw(2) << _tm->tm_mon
+       << std::setw(2) << _tm->tm_mon + 1
        << std::setw(2) << _tm->tm_mday << "_"
        << std::setw(2) << _tm->tm_hour
        << std::setw(2) << _tm->tm_min

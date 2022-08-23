@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON
-# define WEAPON
+#ifndef FIXED_H
+# define FIXED_H
 
 # include <iostream>
-# include <iomanip>
 # include <string>
 
 class Fixed
 {
     int                 fpnValue;
     static const int    nbFractionalBits;
+    
     public:
         Fixed();
         Fixed(const Fixed &fixed);

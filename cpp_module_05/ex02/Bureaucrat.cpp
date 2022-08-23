@@ -6,13 +6,13 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 19:56:09 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 17:08:10 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/23 17:11:44 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.h"
 
-Bureaucrat::Bureaucrat() : name("unknown") , grade(0)
+Bureaucrat::Bureaucrat() : name("unknown") , grade(150)
 {
     std::cout << "Bureaucrat" << " default constructor called." << std::endl;
 }

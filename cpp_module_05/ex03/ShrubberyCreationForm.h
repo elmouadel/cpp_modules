@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:05:50 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 21:14:51 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/23 17:01:38 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class ShrubberyCreationForm : public Form
     public:
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
-        ShrubberyCreationForm(const ShrubberyCreationForm &shrubberycreationform);
-        ShrubberyCreationForm &operator = (const ShrubberyCreationForm &shrubberycreationform);
+        ShrubberyCreationForm(const ShrubberyCreationForm &form);
+        ShrubberyCreationForm &operator = (const ShrubberyCreationForm &form);
         std::string	getTarget(void) const;
         void execute(Bureaucrat const & executor) const;
         ~ShrubberyCreationForm();

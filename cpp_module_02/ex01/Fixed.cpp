@@ -22,7 +22,7 @@ Fixed::Fixed() : fpnValue(0)
 Fixed::Fixed(const int value)
 {
     std::cout << "Int constructor called" << std::endl;
-    fpnValue = value << nbFractionalBits;
+    fpnValue = value * (1 << nbFractionalBits);
 }
 
 Fixed::Fixed(const float value)
@@ -62,7 +62,7 @@ float Fixed::toFloat( void ) const
 
 int Fixed::toInt( void ) const
 {
-    return ((int)fpnValue >> nbFractionalBits);
+    return ((int)fpnValue / (1 << nbFractionalBits));
 }
 
 std::ostream &operator << (std::ostream &output, const Fixed &fixed)

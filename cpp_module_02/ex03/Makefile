@@ -13,8 +13,7 @@
 .PHONY : all bonus clean fclean re 
 
 CC = c++
-STDCPP = -std=c++98
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = fixed
 
@@ -31,10 +30,10 @@ OBJECTS = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS) 
-	@$(CC) $(STDCPP) $(CFLAGS) $(OBJECTS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.o: %.cpp $(INCLUDES)
-	$(CC) $(STDCPP) $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 	
 clean:
 	@rm -f $(OBJECTS)

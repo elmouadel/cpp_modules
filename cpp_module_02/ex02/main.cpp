@@ -24,7 +24,12 @@ int main( void )
     std::cout << a++ << std::endl;
     std::cout << a << std::endl;
     std::cout << b << std::endl;
-    std::cout << ++(Fixed::max(b ,a)) << std::endl;
-    std::cout << b << std::endl;
+    std::cout << (Fixed::max(b ,a)) << std::endl;
     
-    return 0; }
+    Fixed d;
+
+    d = a + b + c;
+
+    std::cout << d << std::endl;
+    return 0; 
+}

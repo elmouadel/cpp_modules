@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:05:50 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 14:42:38 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:55:52 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define SHRUBBERYCREATIONFORM_H
 
 # include <iostream>
-# include <iomanip>
 # include <string>
 # include "Form.h"
 
@@ -25,8 +24,8 @@ class ShrubberyCreationForm : public Form
     public:
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
-        ShrubberyCreationForm(const ShrubberyCreationForm &shrubberycreationform);
-        ShrubberyCreationForm &operator = (const ShrubberyCreationForm &shrubberycreationform);
+        ShrubberyCreationForm(const ShrubberyCreationForm &form);
+        ShrubberyCreationForm &operator = (const ShrubberyCreationForm &form);
         std::string	getTarget(void) const;
         void execute(Bureaucrat const & executor) const;
         ~ShrubberyCreationForm();

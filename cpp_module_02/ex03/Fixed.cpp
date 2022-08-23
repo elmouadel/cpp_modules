@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 19:50:29 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/01 19:14:43 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:28:28 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed() : fpnValue(0){}
 
 Fixed::Fixed(const int value)
 {
-    fpnValue = value << nbFractionalBits;
+    fpnValue = value * (1 << nbFractionalBits);
 }
 
 Fixed::Fixed(const float value)
@@ -126,6 +126,26 @@ Fixed Fixed::operator -- (int)
     return (hol);
 }
 
+int Fixed::getRawBits(void) const
+{
+    return (this->fpnValue);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+    fpnValue = raw;
+}
+
+float Fixed::toFloat( void ) const
+{
+    return ((float)fpnValue / (1 << nbFractionalBits));
+}
+
+int Fixed::toInt( void ) const
+{
+    return ((int)fpnValue / (1 << nbFractionalBits));
+}
+
 Fixed &Fixed::min(Fixed &f1, Fixed &f2)
 {
     if (f1 < f2)
@@ -152,27 +172,6 @@ Fixed &Fixed::max(Fixed const &f1, Fixed const &f2)
     if ((Fixed)f1 > (Fixed)f2)
         return ((Fixed&)f1);
     return ((Fixed&)f2);
-}
-
-int Fixed::getRawBits(void) const
-{
-    // std::cout << "getRawBits member function called" << std::endl;
-    return (this->fpnValue);
-}
-
-void Fixed::setRawBits(int const raw)
-{
-    fpnValue = raw;
-}
-
-float Fixed::toFloat( void ) const
-{
-    return ((float)fpnValue / (1 << nbFractionalBits));
-}
-
-int Fixed::toInt( void ) const
-{
-    return ((int)fpnValue >> nbFractionalBits);
 }
 
 std::ostream &operator << (std::ostream &output, const Fixed &fixed)

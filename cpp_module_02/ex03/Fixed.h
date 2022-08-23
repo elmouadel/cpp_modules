@@ -6,21 +6,22 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 19:51:57 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/07/29 16:31:21 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:12:27 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON
-# define WEAPON
+#ifndef FIXED_H
+# define FIXED_H
 
 # include <iostream>
-# include <iomanip>
 # include <string>
+# include <cmath>
 
 class Fixed
 {
     int                 fpnValue;
     static const int    nbFractionalBits;
+
     public:
         Fixed();
         Fixed(const int value);
@@ -41,14 +42,15 @@ class Fixed
         Fixed   operator ++ (int);
         Fixed   &operator -- (void);
         Fixed   operator -- (int);
+        int     getRawBits(void) const;
+        void    setRawBits(int const raw);
+        int     toInt( void ) const;
+        float   toFloat( void ) const;
+        
         static Fixed   &min(Fixed &f1, Fixed &f2);
         static Fixed   &min(Fixed const &f1, Fixed const &f2);
         static Fixed   &max(Fixed &f1, Fixed &f2);
         static Fixed   &max(Fixed const &f1, Fixed const &f2);
-        int     getRawBits(void) const;
-        void    setRawBits(int const raw);
-        float   toFloat( void ) const;
-        int     toInt( void ) const;
         ~Fixed();
 };
 

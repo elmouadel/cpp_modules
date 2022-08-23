@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 09:45:03 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 21:16:22 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:52:17 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #define FORM_H
 
 # include <iostream>
-# include <iomanip>
 # include <string>
-#include <fstream>
+# include <fstream>
 # include "Bureaucrat.h"
 
 class Bureaucrat;

@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 12:05:52 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 15:38:08 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/23 17:01:31 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
     std::cout << "ShrubberyCreationForm" << " default constructor called." << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubberycreationform) :
-    Form("ShrubberyForm", 145, 137) , target(shrubberycreationform.target)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form) :
+    Form("ShrubberyForm", 145, 137) , target(form.target)
 {
      std::cout << "ShrubberyCreationForm" << " copy constructor called." << std::endl;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator = (const ShrubberyCreationForm &shrubberycreationform)
+ShrubberyCreationForm &ShrubberyCreationForm::operator = (const ShrubberyCreationForm &form)
 {
-    if (this == &shrubberycreationform)
+    if (this == &form)
         return (*this);
-    target = shrubberycreationform.target;
+    target = form.target;
     return (*this);
 }
 

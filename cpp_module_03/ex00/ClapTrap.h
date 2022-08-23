@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:30:54 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/07/30 18:31:00 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/20 15:16:02 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap
     size_t      hitPoint;
     size_t      energy;
     size_t      attDamage;
+    
     public:
         ClapTrap();
         ClapTrap(std::string name);
