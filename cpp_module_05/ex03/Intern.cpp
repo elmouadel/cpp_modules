@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 18:00:07 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 21:13:43 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/24 12:02:40 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Intern::Intern()
 
 Intern::Intern(const Intern &intern)
 {
-    std::cout << "Intern" << " default constructor called." << std::endl;
+    std::cout << "Intern" << " copy constructor called." << std::endl;
     (void)intern;
 }
 
@@ -30,6 +30,22 @@ Intern &Intern::operator = (const Intern &intern)
     return (*this);
 }
 
+Form *makeShrubberyForm(std::string target)
+{
+    return(new ShrubberyCreationForm(target));
+}
+
+Form *makeRobotomyForm(std::string target)
+{
+    return(new RobotomyRequestForm(target));
+}
+
+Form *makePardonForm(std::string target)
+{
+    return(new PresidentialPardonForm(target));
+}
+
+
 Form *Intern::makeForm(std::string form, std::string target)
 {
     std::string strsForms[3] = {
@@ -38,21 +54,17 @@ Form *Intern::makeForm(std::string form, std::string target)
         "presidential pardon"
     };
     
-    size_t i;
-    for (i = 0; i < 3; i++)
+    Form* (*Forms[3])(std::string) = {
+        &makeShrubberyForm,
+        &makeRobotomyForm,
+        &makePardonForm
+    };
+    
+    for (size_t i = 0; i < 3; i++)
         if (strsForms[i] == form)
-            break;
-    switch (i)
-    {
-        case 0:
-            return (new ShrubberyCreationForm(target));
-        case 1:
-            return (new RobotomyRequestForm(target));
-        case 2:
-            return (new PresidentialPardonForm(target));
-        default:
-           throw FormArgException();
-    }
+            return(Forms[i](target));
+    
+    throw FormArgException();
 }
 
 const char *Intern::FormArgException::what() const throw()

@@ -6,14 +6,14 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 09:45:05 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/07 19:02:25 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:13:11 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.h"
 
 Form::Form() :
-    name("0") , isSigned(0) , gradeToSign(0), gradeToExec(0)
+    name("form") , isSigned(150) , gradeToSign(150) , gradeToExec(150)
 {
     std::cout << "Form" << " default constructor called." << std::endl;
 }
@@ -21,7 +21,7 @@ Form::Form() :
 Form::Form(std::string const name, const int gradeToSign, const int gradeToExec) :
     name(name) , isSigned(0) , gradeToSign(gradeToSign), gradeToExec(gradeToExec)
 {
-    std::cout << "Form" << " default constructor called." << std::endl;
+    std::cout << "Form" << " constructor called." << std::endl;
     if (gradeToSign < 1 || gradeToExec < 1)
 		throw GradeTooHighException();
 	else if (gradeToSign > 150 || gradeToExec > 150)
@@ -31,7 +31,7 @@ Form::Form(std::string const name, const int gradeToSign, const int gradeToExec)
 Form::Form(const Form &form) :
     name(form.name) , isSigned(0) , gradeToSign(form.gradeToSign), gradeToExec(form.gradeToExec)
 {
-    std::cout << "Form" << " default constructor called." << std::endl;
+    std::cout << "Form" << " copy constructor called." << std::endl;
 }
 
 Form &Form::operator = (const Form &form)
@@ -94,7 +94,7 @@ std::ostream &operator << (std::ostream &out, const Form &form)
     std::cout << "Form: " << form.getName() << " require a grade of " << form.getGradeToSign()
     << " to sign it and " << form.getGradeToExec() << " to execute it, it's ";
     if (form.getIsSigned())
-        std::cout << "signed.";
+        std::cout << "currently signed.";
     else
         std::cout << "not signed yet.";
     return (out);

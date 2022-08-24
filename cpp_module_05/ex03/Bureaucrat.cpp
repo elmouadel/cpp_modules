@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 19:56:09 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/23 17:11:27 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:08:57 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat() : name("unknown") , grade(150)
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name) , grade(grade)
 {
-    std::cout << "Bureaucrat" << " default constructor called." << std::endl;
+    std::cout << "Bureaucrat" << " constructor called." << std::endl;
     if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)

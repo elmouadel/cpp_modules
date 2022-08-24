@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 14:38:35 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/23 16:42:07 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:07:58 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@ RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyForm", 72, 45) , targ
     
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyForm", 72, 45) , target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : 
+    Form("RobotomyForm", 72, 45) , target(target)
 {
-    std::cout << "RobotomyRequestForm" << " default constructor called." << std::endl;
+    std::cout << "RobotomyRequestForm" << " constructor called." << std::endl;
     
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &form) :
     Form("RobotomyForm", 72, 45) , target(form.target)
 {
-    std::cout << "RobotomyRequestForm" << " default constructor called." << std::endl;
+    std::cout << "RobotomyRequestForm" << " copy constructor called." << std::endl;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator = (const RobotomyRequestForm &form)

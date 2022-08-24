@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 15:05:03 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/23 16:44:42 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:04:50 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ PresidentialPardonForm::PresidentialPardonForm() : Form("PardonForm", 25, 5) , t
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : 
     Form("PardonForm", 25, 5) , target(target)
 {
-    std::cout << "PresidentialPardonForm" << " default constructor called." << std::endl;
+    std::cout << "PresidentialPardonForm" << " constructor called." << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &form) :
