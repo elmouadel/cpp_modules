@@ -6,13 +6,13 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 07:39:03 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/24 15:23:34 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/24 20:45:58 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ConversionTypes.h"
 
-ConversionTypes::ConversionTypes() : number(0), c(0){}
+ConversionTypes::ConversionTypes() : number(0), _char(0){}
 
 ConversionTypes::ConversionTypes(const ConversionTypes &conversiontypes)
 {
@@ -24,7 +24,6 @@ ConversionTypes &ConversionTypes::operator = (const ConversionTypes &conversiont
     if (this == &conversiontypes)
         return (*this);
     number = conversiontypes.number;
-    c = conversiontypes.c;
     return (*this);
 }
 
@@ -45,7 +44,7 @@ void ConversionTypes::toChar(long double number)
 void ConversionTypes::toInt(long double number)
 {
     std::cout << "int: ";
-    if (number <= INT_MAX && number >= INT_MIN && !c)
+    if (number <= INT_MAX && number >= INT_MIN && !_char)
     {
         std::cout << static_cast<int>(number) << std::endl;
     }
@@ -56,7 +55,7 @@ void ConversionTypes::toInt(long double number)
 void ConversionTypes::toFloat(long double number)
 {
     std::cout << "float: ";
-    if ((number <= FLT_MAX && number >= -FLT_MAX && !c) || isnan(number) || isinf(number))
+    if ((number <= FLT_MAX && number >= -FLT_MAX && !_char) || isnan(number) || isinf(number))
     {
         std::cout << std::fixed << std::setprecision(1) << static_cast<float>(number) << "f" << std::endl;
     }
@@ -67,7 +66,7 @@ void ConversionTypes::toFloat(long double number)
 void ConversionTypes::toDouble(long double number)
 {
     std::cout << "double: ";
-    if ((number <= DBL_MAX && number >= -DBL_MAX && !c) || isnan(number) || isinf(number))
+    if ((number <= DBL_MAX && number >= -DBL_MAX && !_char) || isnan(number) || isinf(number))
     {
         std::cout << std::fixed << std::setprecision(1) << static_cast<double>(number) << std::endl;
     }
@@ -81,14 +80,15 @@ void ConversionTypes::toDouble(long double number)
         number = std::stold(arg);
     }
     catch (std::invalid_argument& e) {
-        c = 1;
+        _char = 1;
         if (arg.length() == 1)
             number = arg[0];
         else 
             number = -1;
     }
-    catch (...) {
-        number = DBL_MAX;
+    catch (std::out_of_range& e) {
+        _char = 1;
+        number = -1;
     }
     toChar(number);
     toInt(number);

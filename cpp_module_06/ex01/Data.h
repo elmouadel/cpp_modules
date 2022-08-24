@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 15:41:00 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/09 16:29:00 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/24 21:03:45 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 # include <iostream>
 # include <string>
 
-
-typedef struct s_data
+struct Data
 {
     int content;
-} Data;
-
+};
 
 #endif

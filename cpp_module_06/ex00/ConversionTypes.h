@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 07:39:05 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/24 14:42:48 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/24 20:56:18 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
-#include <limits.h>
-#include <float.h>
-#include <limits>
+# include <cfloat>
+# include <climits>
 
 
 class ConversionTypes
 {
     long double number;
-    bool        c;    
-    std::string literalStr;
+    bool        _char;    
     
     public:
         ConversionTypes();

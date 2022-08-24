@@ -6,34 +6,31 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/08/24 15:24:48 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/24 21:01:26 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : all bonus clean fclean re 
+.PHONY : all clean fclean re 
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = convert
 
-INCLUDES =	ConversionTypes.h		\
+INCLUDE =	ConversionTypes.h
 			
-
-
-SRC	=	main.cpp					\
+SRC	=	main.cpp	\
 		ConversionTypes.cpp				
-
 		
 OBJECTS = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS) 
-	@$(CC) $(CFLAGS) $(STDCPP) $(OBJECTS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
-%.o: %.cpp $(INCLUDES)
-	$(CC) $(CFLAGS) $(STDCPP) -o $@ -c $<
+%.o: %.cpp $(INCLUDE)
+	$(CC) $(CFLAGS) -o $@ -c $<
 	
 clean:
 	@rm -f $(OBJECTS)
