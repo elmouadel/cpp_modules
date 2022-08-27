@@ -17,9 +17,21 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = easyfind
 
+<<<<<<< HEAD
 INCLUDE =	easyfind.h	
 
 SRC	=	main.cpp	
+=======
+<<<<<<< HEAD:cpp_06/ex01/Makefile
+INCLUDE = Data.h 
+			
+SRC	=	main.cpp 
+=======
+INCLUDE =	easyfind.h	
+
+SRC	=	main.cpp	
+>>>>>>> cd60f2ded6c9ff40d16127e657fbd2cc9227355a:cpp_08/ex00/Makefile
+>>>>>>> cd60f2ded6c9ff40d16127e657fbd2cc9227355a
 		
 OBJECTS = $(SRC:.cpp=.o)
 
