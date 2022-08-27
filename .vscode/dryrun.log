@@ -1,6 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/eabdelha/Desktop/cpp_modules'
-make: Leaving directory `/Users/eabdelha/Desktop/cpp_modules'
- 
-make: *** No targets specified and no makefile found.  Stop.
-
