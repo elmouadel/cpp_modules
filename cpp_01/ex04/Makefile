@@ -6,11 +6,11 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/08/16 18:41:10 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/29 09:28:50 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : all bonus clean fclean re 
+.PHONY : all clean fclean re 
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98

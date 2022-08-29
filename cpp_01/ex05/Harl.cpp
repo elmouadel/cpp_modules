@@ -6,11 +6,12 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:23:04 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/18 17:06:21 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/29 10:00:23 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.h"
+#include <stack>
 
 Harl::Harl()
 {
@@ -60,5 +61,5 @@ void    Harl::complain(std::string level)
 {
     for(int i = 0; i < 4; i++)
         if (level == levels[i].strLevel)
-            (this->*(levels[i].funLevel))();
+            (this->*levels[i].funLevel)();
 }

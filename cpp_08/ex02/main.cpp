@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:21:12 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/27 16:20:12 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:42:26 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void testMStr(void)
     mstack.push("5"); 
     mstack.push("737"); 
     mstack.push("0");
-    
+
     MutantStack<std::string>::iterator it = mstack.begin();
     MutantStack<std::string>::iterator ite = mstack.end();
     

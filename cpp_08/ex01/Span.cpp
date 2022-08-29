@@ -6,13 +6,13 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 08:34:30 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/27 15:27:45 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:50:13 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.h"
 
-Span::Span(unsigned n) : size(n) {}
+Span::Span(unsigned int n) : size(n) {}
 
 Span::Span(const Span &span)
 {
@@ -28,14 +28,14 @@ Span &Span::operator = (const Span &span)
     return (*this);
 }
 
-int const &Span::operator[](size_t index) const 
+int const &Span::operator[](int index) const 
 {
-    if (index >= size || index < 0)
+    if (index >= (int)size || index < 0)
         throw (std::out_of_range("unable to access element!"));
     return (numbers[index]);
 }
 
-void Span::addNumber(size_t num)
+void Span::addNumber(int num)
 {
     if (numbers.size() >= size)
         throw (std::out_of_range("unable to add more elements!"));

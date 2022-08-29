@@ -6,7 +6,7 @@
 /*   By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 11:39:20 by eabdelha          #+#    #+#             */
-/*   Updated: 2022/08/18 16:52:50 by eabdelha         ###   ########.fr       */
+/*   Updated: 2022/08/29 09:41:52 by eabdelha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void Replace::replace()
             {
                 strFile.erase(index, s1.length());
                 strFile.insert(index, s2);
-                index = strFile.find(s1, index + 1);
+                index = strFile.find(s1, index + s2.length());
             }
             outfile << strFile << std::flush;
         }

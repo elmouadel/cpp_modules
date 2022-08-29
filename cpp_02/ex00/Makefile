@@ -6,11 +6,11 @@
 #    By: eabdelha <eabdelha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 10:21:40 by eabdelha          #+#    #+#              #
-#    Updated: 2022/07/26 20:21:06 by eabdelha         ###   ########.fr        #
+#    Updated: 2022/08/29 10:29:27 by eabdelha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : all bonus clean fclean re 
+.PHONY : all clean fclean re 
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -20,7 +20,7 @@ NAME = fixed
 INCLUDE =	Fixed.h
 
 SRC	=	main.cpp		\
-		Fixed.cpp		\
+		Fixed.cpp 
 
 OBJECTS = $(SRC:.cpp=.o)
 
